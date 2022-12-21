@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+string deCode(string txt, int x){
+    int k = 0;
+    char y[x + 1][x + 1];
+    string result;
+    for(int i = 0; i < x; i++){
+        for(int j = 0; j < x; j++){
+            y[i][j] = txt[k];
+            k++;
+        }
+    }
+    k = 0;
+    for(int i = 0; i < x; i++){
+        for(int j = 0; j < x; j++){
+            cout << y[i][j] << " ";
+        }
+        cout << endl;
+    }
+    for(int j = 0; j < x; j++){
+        for(int i = 0; i < x; i++){
+            result[k] = y[i][j];
+            k++;
+        }
+    }
+    return result;
+}
+
+int main()
+{
+    string txt = "lana njiw azul g";
+    int n = 4;
+    string result = deCode(txt, n);
+    cout << "Encrypt text ";
+    for(int i = 0; i < txt.length(); i++) {
+        cout << txt[i];
+    }
+    cout << endl;
+    cout << "Encrypted text is: ";
+    for(int i = 0; i < txt.length(); i++) {
+        cout << result[i];
+    }
+}
